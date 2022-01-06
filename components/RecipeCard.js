@@ -12,6 +12,7 @@ export default function RecipeCard({ recipe }) {
           src={"https:" + thumbnail.fields.file.url}
           width={image.width}
           height={image.height}
+          alt={""}
         />
       </div>
       <div className="content">
