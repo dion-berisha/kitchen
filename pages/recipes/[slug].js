@@ -3,8 +3,8 @@ import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const client = createClient({
-  space: "mszqhf7jiphf",
-  accessToken: "1zxeHpUx9LBGiujsZ7et8gaskuactfAEtYS8nVlfrVs",
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
 
 export const getStaticPaths = async () => {
@@ -67,8 +67,7 @@ export default function RecipeDetails({ recipe }) {
 
       <style jsx>
         {`
-          h2,
-          h3 {
+          h2,h3 {
             text-transform: uppercase;
           }
           .banner h2 {
@@ -80,7 +79,7 @@ export default function RecipeDetails({ recipe }) {
             top: -60px;
             left: -10px;
             transform: rotateZ(-1deg);
-            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
           }
           .info p {
             margin: 0;
